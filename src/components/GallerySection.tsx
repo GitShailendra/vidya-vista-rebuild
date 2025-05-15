@@ -1,5 +1,6 @@
 
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const GallerySection = () => {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -123,12 +124,12 @@ const GallerySection = () => {
         </div>
 
         <div className="mt-12 text-center">
-          <a
-            href="/gallery"
+          <Link
+            to="/gallery"
             className="bg-white border border-school-blue text-school-blue hover:bg-school-blue hover:text-white font-medium px-8 py-3 rounded-md transition-colors"
           >
             View Full Gallery
-          </a>
+          </Link>
         </div>
       </div>
     </section>
