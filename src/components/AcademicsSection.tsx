@@ -1,24 +1,12 @@
 
 import { Link } from 'react-router-dom';
 import { BookOpen, Users, Pencil, Award, Clock } from 'lucide-react';
-import FloatingPencil from './decorative/FloatingPencil';
-import FloatingBook from './decorative/FloatingBook';
-import PatternBackground from './decorative/PatternBackground';
 
 const AcademicsSection = () => {
   return (
-    <section className="py-20 bg-white relative overflow-hidden" id="academics">
-      {/* Pattern background */}
-      <PatternBackground patternType="chalkboard" color="#343A40" opacity="0.03" />
-      
-      {/* Decorative elements */}
-      <FloatingPencil className="top-20 left-[8%] rotate-12" size="md" color="#E63946" />
-      <FloatingBook className="top-32 right-[5%]" delay="0.4s" />
-      <FloatingPencil className="bottom-24 left-[15%] -rotate-12" delay="0.7s" size="lg" color="#FFC700" />
-      <FloatingBook className="bottom-40 right-[12%]" delay="1s" size="sm" />
-      
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16 relative">
+    <section className="py-20 bg-white" id="academics">
+      <div className="container mx-auto px-4">
+        <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-school-dark inline-block relative">
             Academics & Activities
             <span className="absolute bottom-0 left-1/4 right-1/4 h-1 bg-school-orange"></span>
@@ -26,13 +14,10 @@ const AcademicsSection = () => {
           <p className="mt-6 text-gray-600 font-poppins">
             Our curriculum is designed to develop, nurture and enhance both analytical and creative learning abilities. Students are encouraged to explore Science, Arts, Technology, and Sports in an engaging environment.
           </p>
-          
-          {/* Decorative element near heading */}
-          <FloatingPencil className="absolute -top-4 -right-4 rotate-45" size="sm" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-school-soft-blue rounded-lg overflow-hidden shadow-md group hover:shadow-xl transition-shadow animate-fade-in relative">
+          <div className="bg-school-soft-blue rounded-lg overflow-hidden shadow-md group hover:shadow-xl transition-shadow animate-fade-in">
             <div className="relative h-64 overflow-hidden">
               <img 
                 src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1200"
@@ -41,9 +26,6 @@ const AcademicsSection = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-school-dark/80 to-transparent"></div>
               <h3 className="absolute bottom-4 left-4 text-white text-2xl font-serif font-bold">Academic Programs</h3>
-              
-              {/* Small floating book in the card */}
-              <FloatingBook className="absolute top-4 right-4 z-10" size="sm" />
             </div>
             <div className="p-6">
               <ul className="space-y-3 font-poppins">
@@ -90,7 +72,7 @@ const AcademicsSection = () => {
             </div>
           </div>
 
-          <div className="bg-school-soft-yellow rounded-lg overflow-hidden shadow-md group hover:shadow-xl transition-shadow animate-fade-in relative" style={{ animationDelay: '200ms' }}>
+          <div className="bg-school-soft-yellow rounded-lg overflow-hidden shadow-md group hover:shadow-xl transition-shadow animate-fade-in" style={{ animationDelay: '200ms' }}>
             <div className="relative h-64 overflow-hidden">
               <img 
                 src="https://images.unsplash.com/photo-1540479859555-17af45c78602?q=80&w=1200"
@@ -99,9 +81,6 @@ const AcademicsSection = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-school-dark/80 to-transparent"></div>
               <h3 className="absolute bottom-4 left-4 text-white text-2xl font-serif font-bold">Co-Curricular Activities</h3>
-              
-              {/* Small floating pencil in the card */}
-              <FloatingPencil className="absolute top-4 right-4 z-10" size="sm" />
             </div>
             <div className="p-6">
               <ul className="space-y-3 font-poppins">

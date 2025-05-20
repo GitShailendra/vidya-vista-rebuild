@@ -1,9 +1,6 @@
 
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
-import FloatingPencil from './decorative/FloatingPencil';
-import SchoolMascot from './decorative/SchoolMascot';
-import PatternBackground from './decorative/PatternBackground';
 
 const TestimonialSection = () => {
   const testimonials = [
@@ -48,28 +45,17 @@ const TestimonialSection = () => {
   };
 
   return (
-    <section className="py-20 bg-school-soft-blue relative overflow-hidden">
-      {/* Pattern background */}
-      <PatternBackground patternType="mixed" color="#1A5DAD" opacity="0.04" />
-      
-      {/* Decorative elements */}
-      <SchoolMascot className="absolute top-10 left-10 opacity-50" size="lg" />
-      <SchoolMascot className="absolute bottom-10 right-10 opacity-50" size="lg" />
-      <FloatingPencil className="absolute top-1/4 right-[10%] rotate-45" color="#FFC700" size="lg" />
-      
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16 relative">
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-4">
+        <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-school-dark inline-block relative">
             What Parents & Alumni Say
             <span className="absolute bottom-0 left-1/4 right-1/4 h-1 bg-school-orange"></span>
           </h2>
-          
-          {/* Decorative elements for heading */}
-          <FloatingPencil className="absolute -top-6 -right-6 rotate-12" size="sm" />
         </div>
 
         <div className="relative max-w-4xl mx-auto">
-          <div className="bg-white rounded-xl p-6 md:p-10 shadow-lg relative">
+          <div className="bg-gray-50 rounded-xl p-6 md:p-10 shadow-lg relative">
             <div className="absolute -top-6 -left-6 text-school-orange">
               <Quote size={48} className="opacity-25" />
             </div>
