@@ -1,6 +1,9 @@
 
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import FloatingPencil from './decorative/FloatingPencil';
+import FloatingBook from './decorative/FloatingBook';
+import SchoolMascot from './decorative/SchoolMascot';
 
 const HeroBanner = () => {
   return (
@@ -15,10 +18,22 @@ const HeroBanner = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-school-dark/80 to-school-blue/50"></div>
       </div>
 
+      {/* Decorative floating elements */}
+      <FloatingPencil className="absolute top-[20%] left-[10%] rotate-12 z-10" size="lg" color="#FFC700" />
+      <FloatingBook className="absolute top-[30%] right-[8%] z-10" size="lg" delay="0.3s" />
+      <FloatingPencil className="absolute bottom-[30%] left-[15%] -rotate-45 z-10" size="md" delay="0.6s" color="#FF6B00" />
+      <FloatingBook className="absolute bottom-[20%] right-[15%] z-10" size="md" delay="0.9s" color="#E63946" />
+      
+      {/* School mascot */}
+      <SchoolMascot className="absolute bottom-10 right-10 z-10" size="lg" />
+
       <div className="container mx-auto px-4 z-10 animate-fade-in">
         <div className="max-w-3xl text-white">
-          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 relative">
             Welcome to <span className="text-school-orange">Sri Saraswathi Vidya Vihar</span>
+            
+            {/* Small floating pencil near the heading */}
+            <FloatingPencil className="absolute -top-8 right-0 rotate-12" size="sm" delay="0.2s" />
           </h1>
           <p className="text-lg md:text-xl opacity-90 mb-8">
             Empowering young minds since 1988 with excellence in education, character building, and holistic development.

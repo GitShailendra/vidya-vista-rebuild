@@ -1,10 +1,22 @@
 
 import { Link } from 'react-router-dom';
+import FloatingBook from './decorative/FloatingBook';
+import FloatingPencil from './decorative/FloatingPencil';
+import SchoolMascot from './decorative/SchoolMascot';
+import PatternBackground from './decorative/PatternBackground';
 
 const AboutSection = () => {
   return (
-    <section className="py-20 bg-white" id="about">
-      <div className="container mx-auto px-4">
+    <section className="py-20 bg-white relative overflow-hidden" id="about">
+      {/* Pattern background */}
+      <PatternBackground patternType="books" color="#1A5DAD" opacity="0.03" />
+      
+      {/* Decorative elements */}
+      <FloatingBook className="top-20 left-[5%]" delay="0.3s" size="lg" />
+      <FloatingPencil className="top-40 right-[5%] rotate-12" delay="0.6s" size="md" />
+      <FloatingBook className="bottom-32 left-[15%]" delay="0.9s" size="sm" color="#FF6B00" />
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row items-center gap-16">
           <div className="md:w-1/2">
             <div className="relative">
@@ -29,14 +41,20 @@ const AboutSection = () => {
                   }}
                 />
               </div>
+              
+              {/* Add school mascot */}
+              <SchoolMascot className="absolute -bottom-10 left-20" size="sm" />
             </div>
           </div>
           <div className="md:w-1/2 mt-12 md:mt-0">
-            <div className="inline-block">
+            <div className="inline-block relative">
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-school-dark relative">
                 About Our School
                 <span className="absolute bottom-0 left-0 w-1/2 h-1 bg-school-orange"></span>
               </h2>
+              
+              {/* Small floating pencil near the heading */}
+              <FloatingPencil className="absolute -right-8 top-0" size="sm" delay="0.2s" />
             </div>
             <p className="mt-6 text-gray-600 leading-relaxed">
               Sri Saraswathi Vidya Vihar has been a pillar of educational excellence in our community since 1988. We offer a value-based learning experience that blends rich academics with students' well-being, guided by an expert staff and passionate management.
@@ -46,13 +64,19 @@ const AboutSection = () => {
             </p>
             
             <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="bg-gray-50 p-4 rounded-lg hover:shadow-md transition-shadow">
+              <div className="bg-school-soft-green p-4 rounded-lg hover:shadow-md transition-shadow relative">
                 <div className="text-school-blue font-bold text-lg mb-1">Vision</div>
                 <p className="text-sm text-gray-600">To nurture global citizens with strong values and excellent academic capabilities</p>
+                
+                {/* Small book icon */}
+                <FloatingBook className="w-6 h-6 absolute -top-2 -right-2" size="sm" />
               </div>
-              <div className="bg-gray-50 p-4 rounded-lg hover:shadow-md transition-shadow">
+              <div className="bg-school-soft-peach p-4 rounded-lg hover:shadow-md transition-shadow relative">
                 <div className="text-school-blue font-bold text-lg mb-1">Mission</div>
                 <p className="text-sm text-gray-600">Providing quality education that balances academic excellence with character development</p>
+                
+                {/* Small pencil icon */}
+                <FloatingPencil className="w-6 h-6 absolute -top-2 -right-2" size="sm" />
               </div>
             </div>
             
