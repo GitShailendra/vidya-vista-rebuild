@@ -11,7 +11,7 @@ interface FloatingBookProps {
 const FloatingBook: React.FC<FloatingBookProps> = ({ 
   className = "", 
   delay = "0s", 
-  size = "md",
+  size = "sm", // Changed default to sm
   color = "#1A5DAD"
 }) => {
   const sizeClasses = {
@@ -22,14 +22,14 @@ const FloatingBook: React.FC<FloatingBookProps> = ({
 
   return (
     <div 
-      className={`absolute ${sizeClasses[size]} ${className}`}
+      className={`absolute ${sizeClasses[size]} ${className} opacity-70`} // Added opacity
       style={{ animationDelay: delay }}
     >
       <svg 
         viewBox="0 0 24 24" 
         fill="none" 
         xmlns="http://www.w3.org/2000/svg"
-        className="animate-float"
+        className="animate-subtle-float" // Changed to subtle float
       >
         <path 
           d="M4 19.5C4 18.837 4.26339 18.2011 4.73223 17.7322C5.20107 17.2634 5.83696 17 6.5 17H20" 

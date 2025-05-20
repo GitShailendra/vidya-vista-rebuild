@@ -10,7 +10,7 @@ interface PatternBackgroundProps {
 
 const PatternBackground: React.FC<PatternBackgroundProps> = ({ 
   color = "#1A5DAD", 
-  opacity = "0.05", 
+  opacity = "0.03", // Reduced opacity default
   patternType = "mixed",
   className = "" 
 }) => {

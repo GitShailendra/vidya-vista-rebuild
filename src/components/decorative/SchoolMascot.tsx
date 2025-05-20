@@ -10,7 +10,7 @@ interface SchoolMascotProps {
 const SchoolMascot: React.FC<SchoolMascotProps> = ({ 
   className = "", 
   size = "md",
-  animate = true 
+  animate = false // Changed default to false
 }) => {
   const sizeClasses = {
     sm: "w-12 h-12",
@@ -18,7 +18,8 @@ const SchoolMascot: React.FC<SchoolMascotProps> = ({
     lg: "w-32 h-32"
   };
 
-  const animationClass = animate ? "animate-bounce" : "";
+  // Reduced animation intensity
+  const animationClass = animate ? "animate-gentle-bounce" : "";
 
   return (
     <div className={`${sizeClasses[size]} ${animationClass} ${className}`}>

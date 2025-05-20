@@ -1,10 +1,14 @@
 
 import { Link } from 'react-router-dom';
 import { Calendar, FileText, Phone } from 'lucide-react';
+import SchoolMascot from './decorative/SchoolMascot';
 
 const CTASection = () => {
   return (
-    <section className="py-20 bg-gradient-to-r from-school-blue to-school-blue/80 text-white">
+    <section className="py-20 bg-gradient-to-r from-school-blue to-school-blue/80 text-white relative">
+      {/* Single mascot in a strategic position */}
+      <SchoolMascot className="absolute bottom-5 right-5 hidden md:block" size="md" animate={true} />
+      
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
