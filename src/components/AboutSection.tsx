@@ -15,11 +15,11 @@ const AboutSection = () => {
                   className="w-full h-auto object-cover"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 bg-school-orange text-white px-6 py-4 rounded shadow-lg md:w-64">
+              <div className="absolute -bottom-6 -right-6 bg-school-orange text-white px-6 py-4 rounded shadow-lg md:w-64 animate-fade-in">
                 <p className="text-lg font-medium mb-1">Established in</p>
                 <p className="text-3xl font-serif font-bold">1988</p>
               </div>
-              <div className="absolute -top-6 -left-6 bg-white p-3 rounded-full shadow-lg z-10 hidden md:block">
+              <div className="absolute -top-6 -left-6 bg-white p-3 rounded-full shadow-lg z-10 hidden md:block animate-fade-in" style={{ animationDelay: '200ms' }}>
                 <img 
                   src="/school-logo.png" 
                   alt="School Logo" 
@@ -45,7 +45,7 @@ const AboutSection = () => {
               Our approach focuses on developing well-rounded individuals prepared for future challenges. We combine traditional values with innovative teaching methods to create an inspiring learning environment where students can discover their potential.
             </p>
             
-            <div className="mt-8 grid grid-cols-2 gap-4">
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="bg-gray-50 p-4 rounded-lg hover:shadow-md transition-shadow">
                 <div className="text-school-blue font-bold text-lg mb-1">Vision</div>
                 <p className="text-sm text-gray-600">To nurture global citizens with strong values and excellent academic capabilities</p>
@@ -54,6 +54,12 @@ const AboutSection = () => {
                 <div className="text-school-blue font-bold text-lg mb-1">Mission</div>
                 <p className="text-sm text-gray-600">Providing quality education that balances academic excellence with character development</p>
               </div>
+            </div>
+            
+            <div className="mt-8">
+              <blockquote className="italic text-gray-600 border-l-4 border-school-orange pl-4 py-2 animate-fade-in">
+                "Education is not the filling of a pail, but the lighting of a fire." – Sri Kannuri Sanjeevi, Founder
+              </blockquote>
             </div>
 
             <div className="mt-8">

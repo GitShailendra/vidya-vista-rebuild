@@ -1,11 +1,12 @@
 
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,6 +23,15 @@ const Navigation = () => {
     };
   }, []);
 
+  useEffect(() => {
+    // Close mobile menu when route changes
+    setIsMenuOpen(false);
+  }, [location]);
+
+  const isActive = (path: string) => {
+    return location.pathname === path;
+  };
+
   return (
     <header 
       className={`w-full ${
@@ -30,7 +40,7 @@ const Navigation = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
-          <div className="flex items-center">
+          <Link to="/" className="flex items-center">
             <img 
               src="/school-logo.png" 
               alt="Sri Saraswathi Vidya Vihar Logo" 
@@ -43,36 +53,36 @@ const Navigation = () => {
               <h1 className="text-school-blue font-serif text-lg font-semibold leading-tight">
                 Sri Saraswathi Vidya Vihar
               </h1>
-              <p className="text-xs text-school-dark">Empowering young minds since 1988</p>
+              <p className="text-xs text-school-dark font-nunito">Empowering young minds since 1988</p>
             </div>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex">
-            <ul className="flex space-x-8 text-sm font-medium">
+            <ul className="flex space-x-8 text-sm font-medium font-poppins">
               <li>
-                <Link to="/" className="text-school-dark hover:text-school-orange transition-colors">Home</Link>
+                <Link to="/" className={`transition-colors border-b-2 pb-1 ${isActive('/') ? 'border-school-orange text-school-orange' : 'border-transparent text-school-dark hover:text-school-orange'}`}>Home</Link>
               </li>
               <li>
-                <Link to="/about" className="text-school-dark hover:text-school-orange transition-colors">About</Link>
+                <Link to="/about" className={`transition-colors border-b-2 pb-1 ${isActive('/about') ? 'border-school-orange text-school-orange' : 'border-transparent text-school-dark hover:text-school-orange'}`}>About</Link>
               </li>
               <li>
-                <Link to="/academics" className="text-school-dark hover:text-school-orange transition-colors">Academics</Link>
+                <Link to="/academics" className={`transition-colors border-b-2 pb-1 ${isActive('/academics') ? 'border-school-orange text-school-orange' : 'border-transparent text-school-dark hover:text-school-orange'}`}>Academics</Link>
               </li>
               <li>
-                <Link to="/facilities" className="text-school-dark hover:text-school-orange transition-colors">Facilities</Link>
+                <Link to="/facilities" className={`transition-colors border-b-2 pb-1 ${isActive('/facilities') ? 'border-school-orange text-school-orange' : 'border-transparent text-school-dark hover:text-school-orange'}`}>Facilities</Link>
               </li>
               <li>
-                <Link to="/admissions" className="text-school-dark hover:text-school-orange transition-colors">Admissions</Link>
+                <Link to="/admissions" className={`transition-colors border-b-2 pb-1 ${isActive('/admissions') ? 'border-school-orange text-school-orange' : 'border-transparent text-school-dark hover:text-school-orange'}`}>Admissions</Link>
               </li>
               <li>
-                <Link to="/gallery" className="text-school-dark hover:text-school-orange transition-colors">Gallery</Link>
+                <Link to="/gallery" className={`transition-colors border-b-2 pb-1 ${isActive('/gallery') ? 'border-school-orange text-school-orange' : 'border-transparent text-school-dark hover:text-school-orange'}`}>Gallery</Link>
               </li>
               <li>
-                <Link to="/notices" className="text-school-dark hover:text-school-orange transition-colors">Notices</Link>
+                <Link to="/notices" className={`transition-colors border-b-2 pb-1 ${isActive('/notices') ? 'border-school-orange text-school-orange' : 'border-transparent text-school-dark hover:text-school-orange'}`}>Notices</Link>
               </li>
               <li>
-                <Link to="/contact" className="text-school-dark hover:text-school-orange transition-colors">Contact</Link>
+                <Link to="/contact" className={`transition-colors border-b-2 pb-1 ${isActive('/contact') ? 'border-school-orange text-school-orange' : 'border-transparent text-school-dark hover:text-school-orange'}`}>Contact</Link>
               </li>
             </ul>
           </nav>
@@ -92,30 +102,30 @@ const Navigation = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-white shadow-lg py-4 animate-fade-in">
           <nav className="container mx-auto px-4">
-            <ul className="flex flex-col space-y-4">
+            <ul className="flex flex-col space-y-4 font-poppins">
               <li>
-                <Link to="/" className="text-school-dark hover:text-school-orange transition-colors block py-2" onClick={() => setIsMenuOpen(false)}>Home</Link>
+                <Link to="/" className={`block py-2 ${isActive('/') ? 'text-school-orange font-medium' : 'text-school-dark'}`}>Home</Link>
               </li>
               <li>
-                <Link to="/about" className="text-school-dark hover:text-school-orange transition-colors block py-2" onClick={() => setIsMenuOpen(false)}>About</Link>
+                <Link to="/about" className={`block py-2 ${isActive('/about') ? 'text-school-orange font-medium' : 'text-school-dark'}`}>About</Link>
               </li>
               <li>
-                <Link to="/academics" className="text-school-dark hover:text-school-orange transition-colors block py-2" onClick={() => setIsMenuOpen(false)}>Academics</Link>
+                <Link to="/academics" className={`block py-2 ${isActive('/academics') ? 'text-school-orange font-medium' : 'text-school-dark'}`}>Academics</Link>
               </li>
               <li>
-                <Link to="/facilities" className="text-school-dark hover:text-school-orange transition-colors block py-2" onClick={() => setIsMenuOpen(false)}>Facilities</Link>
+                <Link to="/facilities" className={`block py-2 ${isActive('/facilities') ? 'text-school-orange font-medium' : 'text-school-dark'}`}>Facilities</Link>
               </li>
               <li>
-                <Link to="/admissions" className="text-school-dark hover:text-school-orange transition-colors block py-2" onClick={() => setIsMenuOpen(false)}>Admissions</Link>
+                <Link to="/admissions" className={`block py-2 ${isActive('/admissions') ? 'text-school-orange font-medium' : 'text-school-dark'}`}>Admissions</Link>
               </li>
               <li>
-                <Link to="/gallery" className="text-school-dark hover:text-school-orange transition-colors block py-2" onClick={() => setIsMenuOpen(false)}>Gallery</Link>
+                <Link to="/gallery" className={`block py-2 ${isActive('/gallery') ? 'text-school-orange font-medium' : 'text-school-dark'}`}>Gallery</Link>
               </li>
               <li>
-                <Link to="/notices" className="text-school-dark hover:text-school-orange transition-colors block py-2" onClick={() => setIsMenuOpen(false)}>Notices</Link>
+                <Link to="/notices" className={`block py-2 ${isActive('/notices') ? 'text-school-orange font-medium' : 'text-school-dark'}`}>Notices</Link>
               </li>
               <li>
-                <Link to="/contact" className="text-school-dark hover:text-school-orange transition-colors block py-2" onClick={() => setIsMenuOpen(false)}>Contact</Link>
+                <Link to="/contact" className={`block py-2 ${isActive('/contact') ? 'text-school-orange font-medium' : 'text-school-dark'}`}>Contact</Link>
               </li>
             </ul>
           </nav>

@@ -42,7 +42,8 @@ const FeaturesSection = () => {
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow transform hover:-translate-y-1 duration-300 border-t-4 border-school-blue"
+              className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow transform hover:-translate-y-1 duration-300 border-t-4 border-school-blue animate-fade-in"
+              style={{ animationDelay: `${index * 150}ms` }}
             >
               <div className="bg-gray-50 inline-flex p-3 rounded-lg mb-4">
                 {feature.icon}
