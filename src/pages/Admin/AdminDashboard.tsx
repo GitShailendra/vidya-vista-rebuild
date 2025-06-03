@@ -45,7 +45,7 @@ const AdminDashboard = () => {
 
   // API client with auth header
   const apiClient = axios.create({
-    baseURL: 'http://localhost:5000',
+    baseURL: 'https://vidya-vista-rebuild.onrender.com',
     headers: {
       Authorization: `Bearer ${token}`
     }
@@ -58,7 +58,7 @@ const AdminDashboard = () => {
       setError(null);
       
       console.log('Fetching gallery items...');
-      const response = await axios.get('http://localhost:5000/gallery');
+      const response = await axios.get('https://vidya-vista-rebuild.onrender.com/gallery');
       
       console.log('Gallery API Response:', response.data);
       

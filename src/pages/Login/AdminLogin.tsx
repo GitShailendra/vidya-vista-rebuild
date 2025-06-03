@@ -40,7 +40,7 @@ const AdminLogin = () => {
 
     try {
       // Replace with your actual API endpoint
-      const response = await axios.post('http://localhost:5000/admin/login', formData, {
+      const response = await axios.post('https://vidya-vista-rebuild.onrender.com/admin/login', formData, {
         headers: {
           'Content-Type': 'application/json',
         },
